@@ -16,6 +16,14 @@ describe DockingStation do
 
   it 'has a method dock' do
     station = DockingStation.new
-    expect(station).to respond_to(:dock)
+    expect(station).to respond_to(:dock).with(1).argument
+  end
+
+  it 'adds bike to station when docking' do
+    station = DockingStation.new
+    bike = station.release_bike
+    station.dock(bike)
+
+    expect(station.bike).to eq(bike)
   end
 end

@@ -1,8 +1,7 @@
 require 'docking_station'
 
 describe DockingStation do
-  station = DockingStation.new
-
+  
   it 'is available as described class' do
     expect(described_class).to eq(DockingStation)
   end
@@ -13,11 +12,10 @@ describe DockingStation do
     docking_station = DockingStation.new
     bike = docking_station.release_bike
     expect(bike.working?).to eq(true)
+  end 
+
+  it 'has a method dock' do
+    station = DockingStation.new
+    expect(station).to respond_to(:dock)
   end
-
-
-  # it 'returns a bike instance when #release_bike is called' do
-  #   expect(station.release_bike).to be_instance_of(Bike)
-  # end
-
 end

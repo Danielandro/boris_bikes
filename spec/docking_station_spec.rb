@@ -14,7 +14,7 @@ describe DockingStation do
     expect(bike.working?).to eq(true)
   end 
 
-  it 'has a method dock' do
+  it 'has a method dock which accepts an argument' do
     station = DockingStation.new
     expect(station).to respond_to(:dock).with(1).argument
   end
